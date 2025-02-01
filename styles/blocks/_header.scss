@@ -1,0 +1,75 @@
+.header {
+  padding: 15px 0;
+  margin-bottom: 60px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__button {
+    width: 40px;
+    height: 40px;
+    background: url("../images/menu-icon.svg") no-repeat center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    display: block;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    .logo__image {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__menu {
+    &-list {
+      display: flex;
+      gap: 17px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-item {
+      display: flex;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      transition: transform 0.3s ease;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+// Миксин для адаптива
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@include mobile {
+  .header__menu {
+    display: none;
+  }
+}
